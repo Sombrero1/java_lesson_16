@@ -9,8 +9,6 @@ public class Game {
     static int motion=0;
     public static void start(){
         Scanner scan = new Scanner(System.in);
-
-
         System.out.println("Введите карты первого игрока:");
         String t=scan.nextLine();
         String [] spl=t.split(" ");
@@ -69,7 +67,9 @@ public class Game {
     }
 
     public static boolean compare(int a, int b){//True - первый игрок, иначе второй
+        if(b==0 && a==9)return false;
         if((a==0 && b==9) || a>b) return true; //младшая карта бьёт старшую
+
         return false;
     }
 
@@ -91,7 +91,7 @@ public class Game {
         if(cards1.size()==0)
             System.out.println("\n!!!Победитель: второй игрок!!!");
         if(cards2.size()==0)
-            System.out.println("\n!!!Победитель: второй игрок!!!");
+            System.out.println("\n!!!Победитель: первый игрок!!!");
 
     }
 }
